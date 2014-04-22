@@ -1,0 +1,27 @@
+{
+  "name"            : "intern-requirements",
+  "version"         : "0.0.1",
+  "description"     : "node.js intern dependencies manager",
+  "main"            : "src/internRequire.js",
+  "scripts"         : {
+    "test" : "cd tests && mocha && grunt test"
+  },
+  "keywords"        : [
+    "intern",
+    "module",
+    "dependencies",
+    "manager",
+    "require"
+  ],
+  "author"          : "Sebastian Tilch, Yunus Uyargil",
+  "license"         : "MIT",
+  "dependencies"    : {
+    "node" : "*"
+  },
+  "devDependencies" : {
+    "grunt"                : "~0.4.2",
+    "grunt-contrib-jshint" : "~0.7.2",
+    "mocha"                : "~1.18.2",
+    "chai"                 : "~1.9.1"
+  }
+}

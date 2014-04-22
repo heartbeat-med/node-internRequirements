@@ -1,0 +1,4 @@
+{
+  "foo": "modules/foo.js",
+  "bar": "modules/bar/test.js"
+}
