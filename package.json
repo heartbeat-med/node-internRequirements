@@ -1,8 +1,8 @@
 {
   "name"            : "intern-requirements",
   "version"         : "0.0.1",
-  "description"     : "node.js intern dependencies manager",
-  "main"            : "src/internRequire.js",
+  "description"     : "node.js intern dependencies manager. Require files the easy way",
+  "main"            : "./src/intern",
   "scripts"         : {
     "test" : "cd tests && mocha && grunt test"
   },
@@ -13,11 +13,17 @@
     "manager",
     "require"
   ],
+  "repository"      : {
+    "type" : "git",
+    "url" : "https://github.com/heartbeat-med/node-internRequirements.git"
+  },
   "author"          : "Sebastian Tilch, Yunus Uyargil",
   "license"         : "MIT",
-  "dependencies"    : {
-    "node" : "*"
+  "homepage"        : "http://heartbeat-med.de",
+  "bugs"            : {
+    "url" : "https://github.com/heartbeat-med/node-internRequirements/issues"
   },
+  "dependencies"    : {},
   "devDependencies" : {
     "grunt"                : "~0.4.2",
     "grunt-contrib-jshint" : "~0.7.2",
