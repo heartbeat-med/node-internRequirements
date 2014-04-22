@@ -1,8 +1,8 @@
 {
   "name"            : "intern-requirements",
-  "version"         : "0.0.1",
+  "version"         : "0.0.2",
   "description"     : "node.js intern dependencies manager. Require files the easy way",
-  "main"            : "./src/intern",
+  "main"            : "./src/internRequirements",
   "scripts"         : {
     "test" : "cd tests && mocha && grunt test"
   },
