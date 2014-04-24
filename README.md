@@ -11,7 +11,7 @@ npm install intern-requirements
 
 Usage
 -------
-First you need a ```dependencies.json``` file in the root.
+First you need a ```dependencies.json``` file on the working directory of the node process.
 ```json
 {
   "foo" : "modules/foo.js",
@@ -20,8 +20,8 @@ First you need a ```dependencies.json``` file in the root.
 ```
 
 In this example we registered two intern dependencies. ```Foo``` with
-the file path ```modules/foo.js```and ```bar```with ```modules/bar/index.json```.
-These path definitions are relative to the root.
+the file path ```modules/foo.js``` and ```bar```with ```modules/bar/index.json```.
+These path definitions are relative current working directory. (```process.cwd()```)
 
 After that you can require the intern modules via
 ```javascript 
