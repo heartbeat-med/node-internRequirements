@@ -4,7 +4,7 @@
   "description"     : "node.js intern dependencies manager. Require files the easy way",
   "main"            : "./src/internRequirements",
   "scripts"         : {
-    "test" : "cd tests && mocha && grunt test"
+    "test" : "cd tests && mocha && cd .. && grunt test"
   },
   "keywords"        : [
     "intern",
