@@ -10,12 +10,29 @@ function InternDependenciesManager()
 {
   this.oDependencies = {};
   // Load dependencies definitions
+  var _oDefinitions = {};
   try {
-    this.oDefinitions = require( InternDependenciesManager.DEPENDENCIES_DEFINITIONS );
+    _oDefinitions = require( InternDependenciesManager.DEPENDENCIES_DEFINITIONS );
   }
   catch( oErr ) {
     throw new Error( InternDependenciesManager.DEPENDENCIES_DEFINITIONS + " not found!" );
   }
+  var oEnvironmentDefinitions = _oDefinitions.ENV;
+
+  if( oEnvironmentDefinitions !== undefined ) {
+    delete _oDefinitions.ENV;
+
+    if( process.env.NODE_ENV !== undefined && oEnvironmentDefinitions[process.env.NODE_ENV] !== undefined ) {
+      // add environment dependencies
+      Object.keys( oEnvironmentDefinitions[process.env.NODE_ENV] ).forEach( function( sKey )
+      {
+        _oDefinitions[sKey] = oEnvironmentDefinitions[process.env.NODE_ENV][sKey];
+      } );
+    }
+  }
+
+  this.oDefinitions = _oDefinitions;
+
 }
 
 /**

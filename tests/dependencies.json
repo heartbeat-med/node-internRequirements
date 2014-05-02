@@ -1,4 +1,10 @@
 {
-  "foo": "modules/foo.js",
-  "bar": "modules/bar/test.js"
+  "foo" : "modules/foo.js",
+  "bar" : "modules/bar/test.js",
+  "mod" : "modules/mod.js",
+  "ENV" : {
+    "test" : {
+      "foo" : "modules/foo-dev.js"
+    }
+  }
 }

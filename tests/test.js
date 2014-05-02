@@ -1,6 +1,7 @@
 "use strict";
 
 var expect = require( "chai" ).expect;
+process.env.NODE_ENV = "test";
 var fnIntern;
 
 describe( "InternRequirements", function()
@@ -16,7 +17,7 @@ describe( "InternRequirements", function()
   } );
   it( "should load intern requirements", function()
   {
-    expect( fnIntern( "foo" ) ).to.equal( require( "./modules/foo.js" ) );
+    expect( fnIntern( "mod" ) ).to.equal( require( "./modules/mod.js" ) );
   } );
   it( "should throw an error if the required module is unknown", function()
   {
@@ -25,4 +26,8 @@ describe( "InternRequirements", function()
       fnIntern( "foobar" );
     } ).to.throw( "module \"foobar\" not found" );
   } );
+
+  it("should load the correct intern requirement for the current environment", function(){
+    expect( fnIntern( "foo" ) ).to.equal( require( "./modules/foo-dev.js" ) );
+  });
 } );
