@@ -2,6 +2,7 @@
 
 var expect = require( "chai" ).expect;
 process.env.NODE_ENV = "test";
+process.env.REL_DEP_LOC = "deps";
 var fnIntern;
 
 describe( "InternRequirements", function()

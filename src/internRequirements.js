@@ -1,7 +1,10 @@
 "use strict";
 
 var sAbsolutePath = process.cwd() + "/";
-
+if ("REL_DEP_LOC" in process.env)
+{
+  sAbsolutePath += process.env.REL_DEP_LOC + "/";
+}
 /**
  * InternDependenciesManager
  * @constructor
