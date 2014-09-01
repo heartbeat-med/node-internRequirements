@@ -1,33 +1,33 @@
 {
-  "name"            : "intern-requirements",
-  "version"         : "0.0.5",
-  "description"     : "node.js intern dependencies manager. Require files the easy way",
-  "main"            : "./src/internRequirements",
-  "scripts"         : {
-    "test" : "cd tests && mocha && cd .. && grunt test"
-  },
-  "keywords"        : [
-    "intern",
-    "module",
-    "dependencies",
-    "manager",
-    "require"
-  ],
-  "repository"      : {
-    "type" : "git",
-    "url" : "https://github.com/heartbeat-med/node-internRequirements.git"
-  },
-  "author"          : "Sebastian Tilch, Yunus Uyargil",
-  "license"         : "MIT",
-  "homepage"        : "http://heartbeat-med.de",
-  "bugs"            : {
-    "url" : "https://github.com/heartbeat-med/node-internRequirements/issues"
-  },
-  "dependencies"    : {},
-  "devDependencies" : {
-    "grunt"                : "~0.4.2",
-    "grunt-contrib-jshint" : "~0.7.2",
-    "mocha"                : "~1.18.2",
-    "chai"                 : "~1.9.1"
-  }
+    "name": "intern-requirements",
+    "version": "0.0.6",
+    "description": "node.js internal dependencies manager. Require files the easy way",
+    "main": "./src/internRequirements",
+    "scripts": {
+        "test": "cd tests && mocha && cd .. && grunt test"
+    },
+    "keywords": [
+        "internal",
+        "module",
+        "dependencies",
+        "manager",
+        "require"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/heartbeat-med/node-internRequirements.git"
+    },
+    "author": "Sebastian Tilch, Yunus Uyargil",
+    "license": "MIT",
+    "homepage": "http://heartbeat-med.de",
+    "bugs": {
+        "url": "https://github.com/heartbeat-med/node-internRequirements/issues"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "grunt": "~0.4.2",
+        "grunt-contrib-jshint": "~0.7.2",
+        "mocha": "~1.18.2",
+        "chai": "~1.9.1"
+    }
 }

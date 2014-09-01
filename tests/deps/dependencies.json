@@ -2,6 +2,12 @@
   "foo" : "../modules/foo.js",
   "bar" : "../modules/bar/test.js",
   "mod" : "../modules/mod.js",
+  "mocha": {
+    "require": "mocha"
+  },
+  "mochaRunner": {
+    "require": "mocha/lib/runner"
+  },
   "ENV" : {
     "test" : {
       "foo" : "../modules/foo-dev.js"

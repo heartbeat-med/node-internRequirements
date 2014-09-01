@@ -1,8 +1,7 @@
 "use strict";
 
 var sAbsolutePath = process.cwd() + "/";
-if ("REL_DEP_LOC" in process.env)
-{
+if( "REL_DEP_LOC" in process.env ) {
   sAbsolutePath += process.env.REL_DEP_LOC + "/";
 }
 /**
@@ -46,7 +45,7 @@ InternDependenciesManager.DEPENDENCIES_DEFINITIONS = sAbsolutePath + "dependenci
 
 /**
  * require intern dependency
- * @param {string} sModuleName module name
+ * @param {string|{require:string}} sModuleName module name
  * @returns {*}
  */
 InternDependenciesManager.prototype.require = function( sModuleName )
@@ -55,7 +54,11 @@ InternDependenciesManager.prototype.require = function( sModuleName )
     throw new Error( "module \"" + sModuleName + "\" not found" );
   }
   if( this.oDependencies[sModuleName] === undefined ) {
-    this.oDependencies[sModuleName] = require( sAbsolutePath + this.oDefinitions[sModuleName] );
+    if( typeof this.oDefinitions[sModuleName] === "string" ) {
+      this.oDependencies[sModuleName] = require( sAbsolutePath + this.oDefinitions[sModuleName] );
+    } else if( this.oDefinitions[sModuleName].require ) {
+      this.oDependencies[sModuleName] = require( this.oDefinitions[sModuleName].require );
+    }
   }
   return this.oDependencies[sModuleName];
 };
@@ -63,7 +66,7 @@ InternDependenciesManager.prototype.require = function( sModuleName )
 var oInternDependenciesManager = new InternDependenciesManager();
 /**
  * require intern dependency
- * @param {string} sModuleName module name
+ * @param {string|{require:string}} sModuleName module name
  * @returns {*}
  */
 module.exports = oInternDependenciesManager.require.bind( oInternDependenciesManager );

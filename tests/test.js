@@ -1,8 +1,8 @@
 "use strict";
-
 var expect = require( "chai" ).expect;
 process.env.NODE_ENV = "test";
 process.env.REL_DEP_LOC = "deps";
+
 var fnIntern;
 
 describe( "InternRequirements", function()
@@ -28,7 +28,18 @@ describe( "InternRequirements", function()
     } ).to.throw( "module \"foobar\" not found" );
   } );
 
-  it("should load the correct intern requirement for the current environment", function(){
+  it( "should load the correct intern requirement for the current environment", function()
+  {
     expect( fnIntern( "foo" ) ).to.equal( require( "./modules/foo-dev.js" ) );
-  });
+  } );
+
+  it( "should load a npm module", function()
+  {
+    expect( fnIntern( "mocha" ) ).to.equal( require( "mocha" ) );
+  } );
+
+  it( "should load a file from a npm module", function()
+  {
+    expect( fnIntern( "mochaRunner" ) ).to.equal( require( "mocha/lib/runner" ) );
+  } );
 } );
